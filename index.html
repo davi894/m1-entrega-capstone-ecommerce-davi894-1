@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Weartake</title>
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <nav class="navegacao">
+            <h1>Weartake</h1>
+            <ul id="ulNavegacao">
+                <li class="liNavegacao"><strong id="todos">Todos</strong> </li>
+                <li class="liNavegacao">Acessórios</li>
+                <li class="liNavegacao">Calçados</li>
+                <li class="liNavegacao">Camisetas</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <ul class="listaDeProdutos">
+
+            <li class="produtos">
+                <img src="./img/camiseta_branca.svg" alt="camiseta branca">
+                <div class="tipoProduto">
+                    <strong>
+                        Camisetas
+                    </strong>
+                </div>
+                <h2>Camiseta branca</h2>
+                <p class="descricaoProduto">
+                    Agora você encontrou a camiseta básica da seu guarda-roupa. É feito de um mais fino ...
+                </p>
+                <div class="preco">
+                    <strong>R$ 30</strong>
+                </div>
+                <button class="comprar">Adicionar ao carrinho</button>
+            </li>
+
+            <li class="produtos">
+                <img src="./img/camiseta_preta.svg" alt="camiseta branca">
+                <div class="tipoProduto">
+                    <strong>
+                        Camisetas
+                    </strong>
+                </div>
+                <h2>Camiseta preta</h2>
+                <p class="descricaoProduto">
+                    Agora você encontrou a camiseta básica da seu guarda-roupa. É feito de um mais fino ...
+                </p>
+                <div class="preco">
+                    <strong>R$ 50</strong>
+                </div>
+                <button class="comprar">Adicionar ao carrinho</button>
+            </li>
+
+            <li class="produtos">
+                <img src="./img/gorro.svg" alt="camiseta branca">
+                <div class="tipoProduto">
+                    <strong>
+                        Acessórios
+                    </strong>
+                </div>
+                <h2>Gorro</h2>
+                <p class="descricaoProduto">
+                    O gorro Next.js chegou! Esta beldade bordada tem um ajuste confortável que garante que...
+                </p>
+                <div class="preco">
+                    <strong>R$ 15</strong>
+                </div>
+                <button class="comprar">Adicionar ao carrinho</button>
+            </li>
+
+            <li class="produtos">
+                <img src="./img/jaqueta.svg" alt="camiseta branca">
+                <div class="tipoProduto">
+                    <strong>
+                        Acessórios
+                    </strong>
+                </div>
+                <h2>Jaqueta</h2>
+                <p class="descricaoProduto">
+                    Adicione um pouco de energia ao seu guarda-roupa de inverno com está jaqueta vibrante...
+                </p>
+                <div class="preco">
+                    <strong>R$ 100</strong>
+                </div>
+                <button class="comprar">Adicionar ao carrinho</button>
+            </li>
+
+            <li class="produtos">
+                <img src="./img/mascara.svg" alt="camiseta branca">
+                <div class="tipoProduto">
+                    <strong>
+                        Acessórios
+                    </strong>
+                </div>
+                <h2>Máscara</h2>
+                <p class="descricaoProduto">
+                    Está máscara facial durável é feita de duas camadas de tecido tratado e possui presilhas...
+                </p>
+                <div class="preco">
+                    <strong>R$ 10</strong>
+                </div>
+                <button class="comprar">Adicionar ao carrinho</button>
+            </li>
+
+            <li class="produtos">
+                <img src="./img/moletom.svg" alt="camiseta branca">
+                <div class="tipoProduto">
+                    <strong>
+                        Acessórios
+                    </strong>
+                </div>
+                <h2>Moletom</h2>
+                <p class="descricaoProduto">
+                    Adicione um pouco de energia ao seu guarda-roupa de inverno com esse moletom vibrante...
+                </p>
+                <div class="preco">
+                    <strong>R$ 110</strong>
+                </div>
+                <button class="comprar">Adicionar ao carrinho</button>
+            </li>
+        </ul>
+
+        <aside>
+            <form action="">
+                <input type="text" name="" id="produtoDigitado" value="" placeholder="Digite o nome do produto">
+                <button class="pesquisarProduto">Pesquisar</button>
+            </form>
+            <div class="carrinho">Carrinho de compras</div>
+            <ul class="comprasFeitas">
+
+                <li class="produtosCarrinhos">
+                    <img src="./img/camiseta_branca.svg" alt="" class="imgCarrinhos">
+                    <div class="detalhesProdutosCarrinho">
+                        <h3>Camiseta branca</h3>
+                        <strong class="valorCompra">R$ 30</strong>
+                        <button class="removerProtudo">Remover produto</button>
+                    </div>
+                </li>
+
+                <li class="produtosCarrinhos">
+                    <img src="./img/camiseta_preta.svg" alt="" class="imgCarrinhos">
+                    <div class="detalhesProdutosCarrinho">
+                        <h3>Camiseta preta</h3>
+                        <strong class="valorCompra">R$ 50</strong>
+                        <button class="removerProtudo">Remover produto</button>
+                    </div>
+                </li>
+
+                <li class="produtosCarrinhos">
+                    <img src="./img/gorro.svg" alt="" class="imgCarrinhos">
+                    <div class="detalhesProdutosCarrinho">
+                        <h3>Gorro</h3>
+                        <strong class="valorCompra">R$ 15</strong>
+                        <button class="removerProtudo">Remover produto</button>
+                    </div>
+                </li>
+
+                <li class="produtosCarrinhos">
+                    <img src="./img/jaqueta.svg" alt="" class="imgCarrinhos">
+                    <div class="detalhesProdutosCarrinho">
+                        <h3>Jaqueta</h3>
+                        <strong class="valorCompra">R$ 100</strong>
+                        <button class="removerProtudo">Remover produto</button>
+                    </div>
+                </li>
+
+                <li class="produtosCarrinhos">
+                    <img src="./img/mascara.svg" alt="" class="imgCarrinhos">
+                    <div class="detalhesProdutosCarrinho">
+                        <h3>Máscara</h3>
+                        <strong class="valorCompra">R$ 10</strong>
+                        <button class="removerProtudo">Remover produto</button>
+                    </div>
+                </li>
+
+                <li class="produtosCarrinhos">
+                    <img src="./img/moletom.svg" alt="" class="imgCarrinhos">
+                    <div class="detalhesProdutosCarrinho">
+                        <h3>Moletom</h3>
+                        <strong class="valorCompra">R$ 110</strong>
+                        <button class="removerProtudo">Remover produto</button>
+                    </div>
+                </li>
+
+            </ul>
+            <div class="quantidadeTotal">
+                <p class="quantidade">Quantidade <strong class="quantidadeDePordutos">6</strong> </p>
+                <p class="total">Total <strong class="precoTotal">R$ 315</strong></p>
+            </div>
+        </aside>
+    </main>
+
+    <script src="./js/index.js"></script>
+    <script src="./js/database.js"></script>
+</body>
+
+</html>
