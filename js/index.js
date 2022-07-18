@@ -4,11 +4,6 @@ function criandoCard(XX) {
     let ulListaDeProdutos = document.querySelector(".listaDeProdutos")
     ulListaDeProdutos.innerText = ''
 
-    /*  console.log(XX) */
-
-    /*  let arrayData = data
-     console.log(arrayData) */
-
     for (let i = 0; i < XX.length; i++) {
 
         let li = document.createElement("li")
@@ -50,57 +45,37 @@ criandoCard(data)
 
 function filtroCardCabecalho() {
 
-    /*  let ulListaDeProdutos = document.querySelector(".listaDeProdutos")
-     ulListaDeProdutos.innerText = '' */
-
     let ulNavegacao = document.querySelector("#ulNavegacao")
 
     ulNavegacao.addEventListener("click", function (event) {
 
-        /*    <ul id="ulNavegacao">
-                <li class="liNavegacao" id="todos">Todos</li>
-                <li class="liNavegacao" id="acessorios">Acessórios</li>
-                <li class="liNavegacao" id="calcados">Calçados</li>
-                <li class="liNavegacao" id="camisetas">Camisetas</li>
-            </ul> */
-        /*   let todos = document.querySelector(`#todos`)
-         let acessorios = document.querySelector(`#acessorios`)
-         let calcados = document.querySelector(`#calcados`)
-         let camisetas = document.querySelector(`#camisetas`) */
-
         let liNav = event.target
-        console.log(liNav)
 
         if (liNav.innerText == "Todos") {
-            console.log(event.target)
+
             criandoCard(data)
-            console.log(criandoCard(data))
+
         } else if (liNav.innerText == 'Acessórios') {
-            console.log(event.target)
+
             let arrayAce = data.filter(data => data.tag[0] == 'Acessórios');
             criandoCard(arrayAce)
-            console.log(criandoCard(arrayAce))
+
 
         } else if (liNav.innerText == "Calçados") {
-            console.log(event.target)
+
             let arrayCal = data.filter(data => data.tag[0] == 'Calçados');
             criandoCard(arrayCal)
-            console.log(criandoCard(arrayCal))
 
         } else if (liNav.innerText == "Camisetas") {
 
-
-            console.log(event.target)
             let arrayCam = data.filter(data => data.tag[0] == 'Camisetas');
             criandoCard(arrayCam)
-            console.log(criandoCard(arrayCam))
         }
     })
 }
 filtroCardCabecalho()
 
-function adicionarCarrinho() {
-
+function estruturaCardCarrinho() {
     {/* <li class="produtosCarrinhos">
     <img src="./img/camiseta_branca.svg" alt="" class="imgCarrinhos">
     <div class="detalhesProdutosCarrinho">
@@ -110,9 +85,45 @@ function adicionarCarrinho() {
     </div>
     </li>  */}
 
-    let ulListaDeProdutos = document.querySelector(".listaDeProdutos")
+    let alo = data
 
-    ulListaDeProdutos.addEventListener(`click`, function (event) {
+    /*  let ulListaDeProdutos = document.querySelector(".listaDeProdutos") */
+
+    let ulcomprasFeitas = document.querySelector(".comprasFeitas")
+    console.log(ulcomprasFeitas)
+
+    for (let i = 0; i < alo.length; i++) {
+
+        let liProdutosCarrinhos = document.createElement(`li`)
+        liProdutosCarrinhos.classList.add(`produtosCarrinhos`)
+        /*  liProdutosCarrinhos.innerText = `${alo[i].addCart}`
+  */
+        let imgCarrinho = document.createElement(`img`)
+        imgCarrinho.classList.add(`imgCarrinhos`)
+        imgCarrinho.src = `${alo[i].img}`
+
+        let divCarrinho = document.createElement(`div`)
+        divCarrinho.classList.add(`detalhesProdutosCarrinho`)
+
+        let h3 = document.createElement(`h3`)
+        h3.innerText = `${alo[i].nameItem}`
+
+        let sapnValorProduto = document.createElement(`span`)
+        sapnValorProduto.classList.add(`valorCompra`)
+        sapnValorProduto.innerText = `R$ ${alo[i].value}`
+
+        let buttonRemover = document.createElement(`button`)
+        buttonRemover.classList.add(`removerProtudo`)
+        buttonRemover.innerText = `Remover produto`
+
+        divCarrinho.append(h3, sapnValorProduto, buttonRemover)
+
+        liProdutosCarrinhos.append(imgCarrinho, divCarrinho)
+
+        ulcomprasFeitas.appendChild(liProdutosCarrinhos)
+    }
+
+    ulcomprasFeitas.addEventListener(`click`, function (event) {
         let buttonComprar = event.target
         if (buttonComprar.tagName == `BUTTON`) {
             console.log(`clicou no botão`)
@@ -120,7 +131,7 @@ function adicionarCarrinho() {
     })
 
 }
-/* adicionarCarrinho() */
+estruturaCardCarrinho()
 
 function removerDocarrinho() {
 
@@ -178,7 +189,6 @@ function pesquisa() {
     })
 }
 /* pesquisa() */
-
 
 
 

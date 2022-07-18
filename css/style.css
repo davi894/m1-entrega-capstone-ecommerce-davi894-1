@@ -125,7 +125,7 @@ h2 {
 
 aside {
     height: 11px;
-    width: 290px;
+    width: 322px;
     position: absolute;
     top: 103px;
     right: 110px;
@@ -178,20 +178,28 @@ form {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    height: 150px;
+    height: 266px;
     overflow-y: auto;
 }
 
 .produtosCarrinhos {
+    border-bottom: 1px solid rgb(0, 0, 0);
     padding: 2%;
     width: 94%;
-    height: 34%;
+    height: 48%;
+    margin-top: -1%;
     display: flex;
 }
 
+.detalhesProdutosCarrinho {
+    margin-top: 8%;
+    margin-left: 10%;
+}
+
+
 .imgCarrinhos {
-    width: 28%;
-    height: 40%;
+    width: 34%;
+    height: 86%;
 }
 
 h3 {
@@ -200,16 +208,18 @@ h3 {
     margin-bottom: 7%;
     border: 0;
     font-size: 100%;
-    font: inherit;
+    font-weight: bold;
     vertical-align: baseline;
 }
 
 .removerProtudo {
+    font-weight: bold;
     font-family: 'Ibarra Real Nova', serif;
     border: none;
     background-color: transparent;
     margin-top: 7%;
     display: block;
+    margin-left: -7px;
 }
 
 .removerProtudo:hover {
@@ -228,4 +238,8 @@ h3 {
     height: 38px;
     background-color: darkslategrey;
     color: #f7f7f7;
+}
+
+.valorCompra {
+    font-weight: bold;
 }
