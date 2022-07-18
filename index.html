@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Weartake</title>
 </head>
@@ -12,13 +15,13 @@
 <body>
 
     <header class="cabecalho">
+        <h1>Weartake</h1>
         <nav class="navegacao">
-            <h1>Weartake</h1>
             <ul id="ulNavegacao">
-                <li class="liNavegacao"><strong id="todos">Todos</strong> </li>
-                <li class="liNavegacao">Acessórios</li>
-                <li class="liNavegacao">Calçados</li>
-                <li class="liNavegacao">Camisetas</li>
+                <li class="liNavegacao" id="todos">Todos</li>
+                <li class="liNavegacao" id="acessorios">Acessórios</li>
+                <li class="liNavegacao" id="calcados">Calçados</li>
+                <li class="liNavegacao" id="camisetas">Camisetas</li>
             </ul>
         </nav>
     </header>
@@ -26,7 +29,7 @@
     <main>
         <ul class="listaDeProdutos">
 
-            <li class="produtos">
+            <!--    <li class="produtos">
                 <img src="./img/camiseta_branca.svg" alt="camiseta branca">
                 <div class="tipoProduto">
                     <strong>
@@ -126,31 +129,32 @@
                     <strong>R$ 110</strong>
                 </div>
                 <button class="comprar">Adicionar ao carrinho</button>
-            </li>
+            </li>  -->
+
         </ul>
 
         <aside>
-            <form action="">
+            <form action="" class="barraPesquisa">
                 <input type="text" name="" id="produtoDigitado" value="" placeholder="Digite o nome do produto">
                 <button class="pesquisarProduto">Pesquisar</button>
             </form>
             <div class="carrinho">Carrinho de compras</div>
             <ul class="comprasFeitas">
 
-                <li class="produtosCarrinhos">
+                <!--   <li class="produtosCarrinhos">
                     <img src="./img/camiseta_branca.svg" alt="" class="imgCarrinhos">
                     <div class="detalhesProdutosCarrinho">
                         <h3>Camiseta branca</h3>
-                        <strong class="valorCompra">R$ 30</strong>
+                        <span class="valorCompra">R$ 30</span>
                         <button class="removerProtudo">Remover produto</button>
                     </div>
-                </li>
+                </li> -->
 
-                <li class="produtosCarrinhos">
+                <!-- <li class="produtosCarrinhos">
                     <img src="./img/camiseta_preta.svg" alt="" class="imgCarrinhos">
                     <div class="detalhesProdutosCarrinho">
                         <h3>Camiseta preta</h3>
-                        <strong class="valorCompra">R$ 50</strong>
+                        <span class="valorCompra">R$ 50</span>
                         <button class="removerProtudo">Remover produto</button>
                     </div>
                 </li>
@@ -159,7 +163,7 @@
                     <img src="./img/gorro.svg" alt="" class="imgCarrinhos">
                     <div class="detalhesProdutosCarrinho">
                         <h3>Gorro</h3>
-                        <strong class="valorCompra">R$ 15</strong>
+                        <span class="valorCompra">R$ 15</span>
                         <button class="removerProtudo">Remover produto</button>
                     </div>
                 </li>
@@ -168,7 +172,7 @@
                     <img src="./img/jaqueta.svg" alt="" class="imgCarrinhos">
                     <div class="detalhesProdutosCarrinho">
                         <h3>Jaqueta</h3>
-                        <strong class="valorCompra">R$ 100</strong>
+                        <span class="valorCompra">R$ 100</span>
                         <button class="removerProtudo">Remover produto</button>
                     </div>
                 </li>
@@ -177,7 +181,7 @@
                     <img src="./img/mascara.svg" alt="" class="imgCarrinhos">
                     <div class="detalhesProdutosCarrinho">
                         <h3>Máscara</h3>
-                        <strong class="valorCompra">R$ 10</strong>
+                        <span class="valorCompra">R$ 10</span>
                         <button class="removerProtudo">Remover produto</button>
                     </div>
                 </li>
@@ -186,21 +190,24 @@
                     <img src="./img/moletom.svg" alt="" class="imgCarrinhos">
                     <div class="detalhesProdutosCarrinho">
                         <h3>Moletom</h3>
-                        <strong class="valorCompra">R$ 110</strong>
+                        <span class="valorCompra">R$ 110</span>
                         <button class="removerProtudo">Remover produto</button>
                     </div>
-                </li>
+                </li> -->
 
             </ul>
             <div class="quantidadeTotal">
-                <p class="quantidade">Quantidade <strong class="quantidadeDePordutos">6</strong> </p>
-                <p class="total">Total <strong class="precoTotal">R$ 315</strong></p>
+                <p class="quantidade">Quantidade <strong class="quantidadeDePordutos">
+                        <!-- 6 -->
+                    </strong> </p>
+                <p class="total">Total <strong class="precoTotal">
+                        <!-- R$ 315 -->
+                    </strong></p>
             </div>
         </aside>
     </main>
-
-    <script src="./js/index.js"></script>
     <script src="./js/database.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
