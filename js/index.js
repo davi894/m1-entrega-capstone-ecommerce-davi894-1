@@ -87,7 +87,6 @@ function estruturaCardCarrinho(ProdutoCarrinho) {
     let soma = 0
 
     ulListaDeProdutos.addEventListener(`click`, function (event) {
-
         let produtos = document.querySelector(".comprasFeitas")
 
         let buttonComprar = event.target
@@ -97,7 +96,7 @@ function estruturaCardCarrinho(ProdutoCarrinho) {
         let valorAtual = ProdutoCarrinho[buttonComprar.id - 1].value
 
         soma += valorAtual
-        if (buttonComprar == `BUTTOn`) { }
+
         for (let i = 0; i < ProdutoCarrinho.length; i++) {
 
             if (buttonComprar.id == ProdutoCarrinho[i].id) {
@@ -138,7 +137,7 @@ function estruturaCardCarrinho(ProdutoCarrinho) {
 
             }
         }
-         spanPreco.innerText = `R$ ${soma}`
+        spanPreco.innerText = `R$ ${soma}`
         spanQuantidade.innerText = `${produtos.children.length}`
     })
 }
@@ -150,9 +149,9 @@ function Pesquisa() {
  <button class="pesquisarProduto">Pesquisar</button> */}
     let inputPesquisa = document.querySelector("#produtoDigitado")
     /* console.log(inputPesquisa) */
-    inputPesquisa.addEventListener("keyup", function (event) {
+    inputPesquisa.addEventListener("keyup", function () {
 
-        console.log(inputPesquisa.value)
+       inputPesquisa.value
         /*   console.log(event.target) */
         criandoCard(data)
     })
@@ -161,7 +160,7 @@ function Pesquisa() {
          filtroCardCabecalho()
     */
 
-    buttonPesquisa.addEventListener("click", function (event) {
+    buttonPesquisa.addEventListener("click", function () {
         console.log(event.target)
     })
 
