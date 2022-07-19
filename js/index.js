@@ -32,6 +32,7 @@ function criandoCard(XX) {
         spanPreco.innerText = `R$ ${XX[i].value}`
 
         let button = document.createElement("button")
+        button.id = XX[i].id
         button.setAttribute("class", "comprar")
         button.innerText = `${XX[i].addCart}`
 
@@ -45,7 +46,7 @@ criandoCard(data)
 
 function filtroCardCabecalho() {
 
-    let ulNavegacao = document.querySelector("#ulNavegacao")
+    /* let ulNavegacao = document.querySelector("#ulNavegacao") */
 
     ulNavegacao.addEventListener("click", function (event) {
 
@@ -75,120 +76,94 @@ function filtroCardCabecalho() {
 }
 filtroCardCabecalho()
 
-function estruturaCardCarrinho() {
-    {/* <li class="produtosCarrinhos">
-    <img src="./img/camiseta_branca.svg" alt="" class="imgCarrinhos">
-    <div class="detalhesProdutosCarrinho">
-        <h3>Camiseta branca</h3>
-        <strong class="valorCompra">R$ 30</strong>
-        <button class="removerProtudo">Remover produto</button>
-    </div>
-    </li>  */}
+function estruturaCardCarrinho(ProdutoCarrinho) {
 
-    let alo = data
+    let ulListaDeProdutos = document.querySelector(".listaDeProdutos")
 
-    /*  let ulListaDeProdutos = document.querySelector(".listaDeProdutos") */
+    let spanQuantidade = document.querySelector('.quantidadeDePordutos ')
 
-    let ulcomprasFeitas = document.querySelector(".comprasFeitas")
-    console.log(ulcomprasFeitas)
+    let spanPreco = document.querySelector('.precoTotal')
 
-    for (let i = 0; i < alo.length; i++) {
+    let soma = 0
 
-        let liProdutosCarrinhos = document.createElement(`li`)
-        liProdutosCarrinhos.classList.add(`produtosCarrinhos`)
-        /*  liProdutosCarrinhos.innerText = `${alo[i].addCart}`
-  */
-        let imgCarrinho = document.createElement(`img`)
-        imgCarrinho.classList.add(`imgCarrinhos`)
-        imgCarrinho.src = `${alo[i].img}`
+    ulListaDeProdutos.addEventListener(`click`, function (event) {
 
-        let divCarrinho = document.createElement(`div`)
-        divCarrinho.classList.add(`detalhesProdutosCarrinho`)
+        let produtos = document.querySelector(".comprasFeitas")
 
-        let h3 = document.createElement(`h3`)
-        h3.innerText = `${alo[i].nameItem}`
-
-        let sapnValorProduto = document.createElement(`span`)
-        sapnValorProduto.classList.add(`valorCompra`)
-        sapnValorProduto.innerText = `R$ ${alo[i].value}`
-
-        let buttonRemover = document.createElement(`button`)
-        buttonRemover.classList.add(`removerProtudo`)
-        buttonRemover.innerText = `Remover produto`
-
-        divCarrinho.append(h3, sapnValorProduto, buttonRemover)
-
-        liProdutosCarrinhos.append(imgCarrinho, divCarrinho)
-
-        ulcomprasFeitas.appendChild(liProdutosCarrinhos)
-    }
-
-    ulcomprasFeitas.addEventListener(`click`, function (event) {
         let buttonComprar = event.target
-        if (buttonComprar.tagName == `BUTTON`) {
-            console.log(`clicou no botão`)
+
+        let ulcomprasFeitas = document.querySelector(".comprasFeitas")
+
+        let valorAtual = ProdutoCarrinho[buttonComprar.id - 1].value
+
+        soma += valorAtual
+        if (buttonComprar == `BUTTOn`) { }
+        for (let i = 0; i < ProdutoCarrinho.length; i++) {
+
+            if (buttonComprar.id == ProdutoCarrinho[i].id) {
+                let liProdutosCarrinhos = document.createElement(`li`)
+                liProdutosCarrinhos.classList.add(`produtosCarrinhos`)
+
+                let imgCarrinho = document.createElement(`img`)
+                imgCarrinho.classList.add(`imgCarrinhos`)
+                imgCarrinho.src = `${ProdutoCarrinho[i].img}`
+
+                let divCarrinho = document.createElement(`div`)
+                divCarrinho.classList.add(`detalhesProdutosCarrinho`)
+
+                let h3 = document.createElement(`h3`)
+                h3.innerText = `${ProdutoCarrinho[i].nameItem}`
+
+                let sapnValorProduto = document.createElement(`span`)
+                sapnValorProduto.classList.add(`valorCompra`)
+                sapnValorProduto.innerText = `R$ ${ProdutoCarrinho[i].value}`
+
+                let buttonRemover = document.createElement(`button`)
+                buttonRemover.classList.add(`removerProtudo`)
+                buttonRemover.innerText = `Remover produto`
+                buttonRemover.id = ProdutoCarrinho[i].id
+
+                divCarrinho.append(h3, sapnValorProduto, buttonRemover)
+
+                liProdutosCarrinhos.append(imgCarrinho, divCarrinho)
+
+                ulcomprasFeitas.appendChild(liProdutosCarrinhos)
+
+                buttonRemover.addEventListener("click", function () {
+                    liProdutosCarrinhos.remove()
+                    soma -= valorAtual
+                    spanQuantidade.innerText = `${produtos.children.length}`
+                    spanPreco.innerText = `R$ ${soma}`
+                })
+
+            }
         }
+         spanPreco.innerText = `R$ ${soma}`
+        spanQuantidade.innerText = `${produtos.children.length}`
     })
-
 }
-estruturaCardCarrinho()
+estruturaCardCarrinho(data)
 
-function removerDocarrinho() {
+function Pesquisa() {
 
-    /*  <img src="./img/camiseta_branca.svg" alt="" class="imgCarrinhos">
-     <div class="detalhesProdutosCarrinho">
-         <h3>Camiseta branca</h3>
-         <strong class="valorCompra">R$ 30</strong>
-         <button class="removerProtudo">Remover produto</button>
-     </div>
- </li>  
-  */
+    {/* <input type="text" name="" id="produtoDigitado" value="" placeholder="Digite o nome do produto"></input>
+ <button class="pesquisarProduto">Pesquisar</button> */}
+    let inputPesquisa = document.querySelector("#produtoDigitado")
+    /* console.log(inputPesquisa) */
+    inputPesquisa.addEventListener("keyup", function (event) {
 
-    let comprasFeitas = document.querySelector('.comprasFeitas')
-
-    comprasFeitas.addEventListener('click', function (event) {
-        let buttonRemover = event.target
-        if (buttonRemover.tagName == `BUTTON`) {
-            console.log(`clicou no botão de remover`)
-        }
+        console.log(inputPesquisa.value)
+        /*   console.log(event.target) */
+        criandoCard(data)
     })
-
-}
-/* removerDocarrinho() */
-
-
-function calculoDocarrinho() {
-
-    /*  <img src="./img/camiseta_branca.svg" alt="" class="imgCarrinhos">
-       <div class="detalhesProdutosCarrinho">
-           <h3>Camiseta branca</h3>
-           <strong class="valorCompra">R$ 30</strong>
-           <button class="removerProtudo">Remover produto</button>
-       </div>
-   </li>  
+    let buttonPesquisa = document.querySelector(".pesquisarProduto")
+    /*  console.log(buttonPesquisa) 
+         filtroCardCabecalho()
     */
 
-
-    let ulcomprasFeitas = document.getElementsByClassName("comprasFeitas")[0]
-    console.log(ulcomprasFeitas)
-
-    let liProdutosCarrinhos = document.getElementsByClassName(`produtosCarrinhos`)
-    console.log(liProdutosCarrinhos)
-}
-/* calculoDocarrinho() */
-
-function pesquisa() {
-
-    let produtoDigitado = document.querySelector('#produtoDigitado')
-
-    produtoDigitado.addEventListener('keyup', function (event) {
-
-        let inputValue = event.target.value
-
-        console.log(inputValue)
+    buttonPesquisa.addEventListener("click", function (event) {
+        console.log(event.target)
     })
+
 }
-/* pesquisa() */
-
-
-
+Pesquisa()

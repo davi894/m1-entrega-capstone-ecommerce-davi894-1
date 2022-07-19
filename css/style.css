@@ -1,5 +1,5 @@
 body {
-    max-width: 1230px;
+    max-width: 100%;
     font-family: 'Ibarra Real Nova', serif;
 }
 
@@ -11,6 +11,8 @@ body {
 
 main {
     display: flex;
+    justify-content: space-between;
+    padding-right: 40px
 }
 
 .navegacao {
@@ -20,7 +22,7 @@ main {
 
 h1 {
     font-size: 27px;
-    margin-right: 36%;
+    margin-right: 48%;
 }
 
 #ulNavegacao {
@@ -44,11 +46,11 @@ h1 {
 }
 
 .listaDeProdutos {
-    max-width: 815px;
+    max-width: 881px;
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
-    gap: 1%;
+    gap: 2%;
 }
 
 .produtos {
@@ -61,16 +63,9 @@ h1 {
     flex-direction: column;
 }
 
-.produtos:hover {
-    cursor: pointer;
-    background-color: darkslategrey;
-    color: #f7f7f7;
-}
-
 img {
     background-color: silver;
-    width: 100%;
-    margin-top: 0%;
+    width: 216px;
 }
 
 h2 {
@@ -120,15 +115,14 @@ h2 {
 .comprar:hover {
     text-decoration: underline;
     cursor: pointer;
-    color: #f7f7f7;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 aside {
-    height: 11px;
     width: 322px;
-    position: absolute;
-    top: 103px;
-    right: 110px;
+    margin-top: 35px;
+    padding-right: 50px;
 }
 
 form {
@@ -198,8 +192,8 @@ form {
 
 
 .imgCarrinhos {
-    width: 34%;
-    height: 86%;
+    width: 41%;
+    height: 67%;
 }
 
 h3 {
@@ -240,6 +234,10 @@ h3 {
     color: #f7f7f7;
 }
 
-.valorCompra {
+.pesquisarProduto:hover {
+    background-color: rgb(255, 255, 255);
+    color: darkslategrey;
+    border: 1px solid darkslategrey;
     font-weight: bold;
+    cursor: pointer;
 }
